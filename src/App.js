@@ -9,6 +9,9 @@ import NotFounds from './Pages/NotFounds/NotFounds';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import AuthProvider from './context/AuthProvider';
+import Explore from './Pages/Explore/Explore';
+import Purchase from './Pages/Home/Purchase/Purchase';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -23,6 +26,18 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+            <Route path="/explore">
+              <Explore></Explore>
+            </Route>
+
+            <Route path="/service/:serviceId">
+              <Purchase></Purchase>
+            </Route>
+
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
+            </Route>
+
 
             <Route path="*">
               <NotFounds></NotFounds>

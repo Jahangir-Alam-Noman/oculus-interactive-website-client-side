@@ -19,8 +19,8 @@ const Header = () => {
                         <Nav className="mx-auto anchor">
 
                             <Link to="/home">Home</Link>
-                            <Link to="/services">Services</Link>
-                            <Link to="/doctors">Doctors</Link>
+                            <Link to="/explore">Explore</Link>
+                            <Link to="/dashboard">Dashboard</Link>
                             <Link to="/about">About</Link>
 
                         </Nav>
