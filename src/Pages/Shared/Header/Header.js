@@ -26,8 +26,8 @@ const Header = () => {
                         </Nav>
                         <Nav>
                             <Nav.Link className="text-white" href="#deets">{user.displayName}</Nav.Link>
-                            {user.displayName ?
-                                <button onClick={logout} type="button" class="btn btn-outline-warning">Log out</button>
+                            {user?.email ?
+                                <button onClick={logout} type="button" class="btn btn-outline-info">Log out</button>
                                 :
                                 <Link className="text-white" eventKey={2} to="/login">
                                     <button type="button" class="btn btn-outline-info">Login</button>

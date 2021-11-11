@@ -13,7 +13,7 @@ const Service = ({ service }) => {
                     <Card.Body>
                         <Card.Title className="name">{name}</Card.Title>
                         <Card.Text>
-                            <p> {description.slice(0, 120)}</p>
+                            <p> {description.slice(0, 100)}</p>
 
                         </Card.Text>
                         <Card.Title>

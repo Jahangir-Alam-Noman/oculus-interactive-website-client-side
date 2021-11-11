@@ -216,11 +216,11 @@ const Footer = () => {
                     </Link>
                 </div>
 
-            </footer>
+            </footer >
 
 
 
-        </div>
+        </div >
     );
 };
 

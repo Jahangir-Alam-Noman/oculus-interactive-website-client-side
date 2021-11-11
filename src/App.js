@@ -12,6 +12,9 @@ import AuthProvider from './context/AuthProvider';
 import Explore from './Pages/Explore/Explore';
 import Purchase from './Pages/Home/Purchase/Purchase';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import Register from './Pages/Login/Register/Register';
+import Login from './Pages/Login/Login/Login';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -26,13 +29,22 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+
             <Route path="/explore">
               <Explore></Explore>
             </Route>
 
-            <Route path="/service/:serviceId">
-              <Purchase></Purchase>
+            <Route path="/login">
+              <Login></Login>
             </Route>
+
+            <Route path="/register">
+              <Register></Register>
+            </Route>
+
+            <PrivateRoute path="/service/:serviceId">
+              <Purchase></Purchase>
+            </PrivateRoute>
 
             <Route path="/dashboard">
               <Dashboard></Dashboard>

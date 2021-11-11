@@ -31,7 +31,7 @@ const AddProduct = () => {
                 {/* <input type="submit" /> */}
                 {errors.name && <span className="text-danger">Your name maximum 20 letters</span>}
                 {/* <input className="btn btn-primary" type="submit" value="Submit" /> */}
-                <button type="submit" class="btn btn-info">Submit </button>
+                <button type="submit" class="btn btn-info text-white fw-bolder">Submit </button>
 
             </form>
 
