@@ -3,7 +3,7 @@ import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SingleExplore = ({ explore }) => {
-    const { name, img, price, description, id } = explore;
+    const { name, img, price, description, _id } = explore;
     return (
         <div>
             <Col className="text-start">
@@ -16,7 +16,7 @@ const SingleExplore = ({ explore }) => {
                             <p> {description.slice(0, 120)}</p>
                         </Card.Text>
                         <Card.Title>
-                            <Link to={`/service/${id}`}>  <button className="btn  btn-outline-info  px-3 py-2">Buy Now </button></Link>
+                            <Link to={`/service/${_id}`}>  <button className="btn  btn-outline-info  px-3 py-2">Buy Now </button></Link>
                         </Card.Title>
                     </Card.Body>
                 </Card>

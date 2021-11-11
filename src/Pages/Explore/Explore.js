@@ -6,7 +6,7 @@ import './Explore.css';
 const Explore = () => {
     const [explores, setExplores] = useState([]);
     useEffect(() => {
-        fetch('/services.json')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setExplores(data))
 
@@ -21,7 +21,7 @@ const Explore = () => {
                 <Row xs={1} md={3} className="g-2">
                     {
                         explores.map(explore => <SingleExplore
-                            key={explore.id}
+                            key={explore._id}
                             explore={explore}
                         ></SingleExplore>)
                     }

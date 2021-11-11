@@ -7,10 +7,10 @@ const About = () => {
             <section id="services" className="bg-light pt-100 pb-70">
                 <div className="container text-start">
                     <div className="row align-items-center">
-                        <div className="col-lg-5 ">
-                            <h2 className="title">What We <span>Do</span> the
+                        <div className="col-lg-5  ">
+                            <h1 className="title ">What We <span>Do</span> the
                                 best!
-                            </h2>
+                            </h1>
                             <p className=" mt-3 ">
                                 Get The Best Protection For Your Eyes With Digital Block Lenses and
                                 Sunglasses or sun glasses are a form of protective eyewear designed primarily to prevent bright sunlight and high-energy visible light from damaging or discomforting the eyes
