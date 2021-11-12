@@ -20,14 +20,20 @@ const Header = () => {
 
                             <Link to="/home">Home</Link>
                             <Link to="/explore">Explore</Link>
-                            <Link to="/dashboard">Dashboard</Link>
+                            {/* <Link to="/dashboard">Dashboard</Link> */}
                             <Link to="/about">About</Link>
 
                         </Nav>
                         <Nav>
                             <Nav.Link className="text-white" href="#deets">{user.displayName}</Nav.Link>
                             {user?.email ?
-                                <button onClick={logout} type="button" class="btn btn-outline-info">Log out</button>
+                                <div>
+                                    <Link className="text-white m-2" eventKey={2} to="/dashboard">
+                                        <button type="button" class="btn btn-outline-info">Dashboard</button>
+                                    </Link>
+
+                                    <button onClick={logout} type="button" class="btn btn-outline-info">Log out</button>
+                                </div>
                                 :
                                 <Link className="text-white" eventKey={2} to="/login">
                                     <button type="button" class="btn btn-outline-info">Login</button>

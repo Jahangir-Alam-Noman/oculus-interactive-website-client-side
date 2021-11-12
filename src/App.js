@@ -46,9 +46,9 @@ function App() {
               <Purchase></Purchase>
             </PrivateRoute>
 
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </Route>
+            </PrivateRoute>
 
 
             <Route path="*">

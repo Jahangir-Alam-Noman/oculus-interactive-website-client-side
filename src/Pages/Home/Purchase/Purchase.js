@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
 import './Purchase.css';
+import { Alert } from 'react-bootstrap';
+import { Input } from 'react-bootstrap';
 
 const Purchase = () => {
     const { user } = useAuth();
     const { serviceId } = useParams();
-
     const [details, setDetails] = useState([]);
+    const [orderSuccess, setOrderSuccess] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:5000/products/${serviceId}`)
@@ -25,7 +27,7 @@ const Purchase = () => {
         axios.post(`http://localhost:5000/products/${serviceId}`, data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Successfully Ordered');
+                    setOrderSuccess(true);
                     reset();
                 }
             })
@@ -38,6 +40,7 @@ const Purchase = () => {
                     <span className="text-white">Product Details</span>
                 </p>
             </div>
+
             <div className="row pb-5 mb-5 px-5 container  ">
                 <div className="col-12 col-md-6 px-5 col-lg-6">
                     <img src={details?.img} className="img-fluid pt-3" alt="" />
@@ -48,6 +51,10 @@ const Purchase = () => {
                 </div>
                 <div className="col-12  col-md-6   col-lg-6">
                     <div className="book_package pt-5 mt-5">
+                        {orderSuccess && <Alert variant="success">
+                            Ordered Successfully!
+                        </Alert>}
+
                         <h3 className="fw-bolder">Buy Product</h3>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input defaultValue={user?.displayName} {...register("name", { required: true, maxLength: 20 })}
@@ -56,7 +63,14 @@ const Purchase = () => {
                             <textarea {...register("address", { required: true })} className="description" placeholder="Address" /> <br />
                             <input type="number" {...register("phone")} placeholder="Cell Number" />
 
-                            <input defaultValue={details?.name}  {...register("product")} placeholder="Product name" />
+                            {/* <input defaultValue={details?.name}  {...register("product")} placeholder="Product name" /> */}
+
+                            <input {...register("product", { required: true })} placeholder="Product name" />
+
+
+                            {/* <input {...register("firstName", { required: true, maxLength: 20 })} /> */}
+                            {/* <input {...register("firstName", { required: true })} /> */}
+
 
 
                             {errors.address && <span className="text-danger">Address is required</span>}

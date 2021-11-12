@@ -1,36 +1,69 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import useAuth from '../../../hooks/useAuth';
 
 const MyOrders = () => {
+    const { user } = useAuth();
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        const url = `http://localhost:5000/orders?email=${user.email}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setOrders(data))
+
+    }, [orders])
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure , You want to delete ?');
+        if (proceed) {
+            const url = `http://localhost:5000/manage/orders/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('Successfully deleted');
+                        const remaining = orders.filter(pd => pd._id === id);
+                        setOrders(remaining);
+                    }
+
+                })
+        }
+    }
+
     return (
         <div>
-            <h1>My Orders page </h1>
+            <h1 className="pt-5 pb-4 mt-2  fw-bolder">My total  Orders  : {orders.length} </h1>
             <table className="table table-success table-striped table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">SL</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+
+                    {
+                        orders.map((order, index) => <tr key={order._id}>
+                            <th scope="row">{index === 0 ? index + 1 : index + 1}</th>
+                            <td>{order?.name}</td>
+                            <td>{order?.email}</td>
+                            <td>{order?.phone}</td>
+                            <td>{order?.product}</td>
+                            <td className="text-center text-dark">
+                                <button type="button" class="btn btn-success">{order.status}</button>
+                                <button onClick={() => handleDelete(order._id)} type="button" class="btn btn-danger">Delete</button>
+
+                            </td>
+                        </tr>)
+                    }
+
+
                 </tbody>
             </table>
         </div>

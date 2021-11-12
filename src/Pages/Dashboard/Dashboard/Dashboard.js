@@ -52,7 +52,7 @@ const Dashboard = () => {
                         </div>
                         <div className="col-md-10 col-sm-11 display-table-cell v-align">
                             <div className="user-dashboard">
-                                <h1>Hello, JS</h1>
+
                                 <div className="row">
                                     {/* <div className="col-md-5 col-sm-5 col-xs-12 gutter">
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos officia dolor aliquid repellendus atque veniam temporibus natus hic, quibusdam a aut, nesciunt sequi quo. Magni molestiae pariatur sequi velit voluptas!</p>
