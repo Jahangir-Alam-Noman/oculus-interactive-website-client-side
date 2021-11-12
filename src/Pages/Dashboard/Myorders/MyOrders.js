@@ -34,7 +34,7 @@ const MyOrders = () => {
 
     return (
         <div>
-            <h1 className="pt-5 pb-4 mt-2  fw-bolder">My total  Orders  : {orders.length} </h1>
+            <h1 className="pt-5 pb-4 mt-2  fw-bolder">My Total  Orders  : {orders.length} </h1>
             <table className="table table-success table-striped table-hover">
                 <thead>
                     <tr>

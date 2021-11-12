@@ -65,7 +65,7 @@ const Purchase = () => {
 
                             {/* <input defaultValue={details?.name}  {...register("product")} placeholder="Product name" /> */}
 
-                            <input {...register("product", { required: true })} placeholder="Product name" />
+                            <input {...register("product", { required: true })} placeholder="Type product name" />
 
 
                             {/* <input {...register("firstName", { required: true, maxLength: 20 })} /> */}

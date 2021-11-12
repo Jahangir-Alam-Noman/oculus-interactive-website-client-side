@@ -15,8 +15,11 @@ import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddProduct from '../AddProduct/AddProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import useAuth from '../../../hooks/useAuth';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
 const Dashboard = () => {
+    const { admin } = useAuth();
     let { path, url } = useRouteMatch();
     return (
         <div className="dashboard">
@@ -39,11 +42,13 @@ const Dashboard = () => {
                                     <li> <Link to={`${url}/payment`}><i className="fa fa-tasks" aria-hidden="true"></i> <span className="nav-label text-white">Payment</span></Link></li>
                                     <li> <Link to={`${url}/myOrders`}><i className="fa fa-bar-chart" aria-hidden="true"></i> <span className="nav-label text-white">My Orders</span></Link></li>
                                     <li> <Link to={`${url}/review`}><i className="fa fa-user" aria-hidden="true"></i> <span className="nav-label text-white">Review</span></Link></li>
-                                    <li> <Link to={`${url}/manageAllOrders`}><i className="fa fa-calendar" aria-hidden="true"></i> <span className="nav-label text-white">Manage all orders</span></Link></li>
-                                    <li> <Link to={`${url}/addProduct`}><i className="fa fa-files-o"></i> <span className="nav-label text-white">Add  a Product</span></Link></li>
-                                    <li> <Link to={`${url}/makeAdmin`}><i className="fa fa-cog" aria-hidden="true"></i>  <span className="nav-label text-white">Make Admin</span></Link></li>
-                                    <li> <Link to={`${url}/manageProducts`}><i className="fa fa-files-o"></i> <span className="nav-label text-white">Manage Products</span></Link></li>
 
+                                    {admin && <div>
+                                        <li> <Link to={`${url}/manageAllOrders`}><i className="fa fa-calendar" aria-hidden="true"></i> <span className="nav-label text-white">Manage all orders</span></Link></li>
+                                        <li> <Link to={`${url}/addProduct`}><i className="fa fa-files-o"></i> <span className="nav-label text-white">Add  a Product</span></Link></li>
+                                        <li> <Link to={`${url}/makeAdmin`}><i className="fa fa-cog" aria-hidden="true"></i>  <span className="nav-label text-white">Make Admin</span></Link></li>
+                                        <li> <Link to={`${url}/manageProducts`}><i className="fa fa-files-o"></i> <span className="nav-label text-white">Manage Products</span></Link></li>
+                                    </div>}
 
 
 
@@ -80,18 +85,25 @@ const Dashboard = () => {
                                             <Review></Review>
                                         </Route>
 
-                                        <Route path={`${path}/manageAllOrders`}>
+
+                                        <AdminRoute path={`${path}/manageAllOrders`}>
                                             <ManageAllOrders></ManageAllOrders>
-                                        </Route>
-                                        <Route path={`${path}/addProduct`}>
+                                        </AdminRoute>
+
+
+                                        <AdminRoute path={`${path}/addProduct`}>
                                             <AddProduct></AddProduct>
-                                        </Route>
-                                        <Route path={`${path}/makeAdmin`}>
+                                        </AdminRoute>
+
+
+                                        <AdminRoute path={`${path}/makeAdmin`}>
                                             <MakeAdmin></MakeAdmin>
-                                        </Route>
-                                        <Route path={`${path}/manageProducts`}>
+                                        </AdminRoute>
+
+
+                                        <AdminRoute path={`${path}/manageProducts`}>
                                             <ManageProducts></ManageProducts>
-                                        </Route>
+                                        </AdminRoute>
 
 
                                     </Switch>

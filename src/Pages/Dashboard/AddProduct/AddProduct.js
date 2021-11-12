@@ -20,7 +20,7 @@ const AddProduct = () => {
 
 
     return (
-        <div className="add_package">
+        <div className="add_package pt-5 mt-4">
             <h2 className="">Add a new product</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name", { required: true, maxLength: 20 })}
