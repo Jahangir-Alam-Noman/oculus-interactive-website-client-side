@@ -7,7 +7,7 @@ const Services = () => {
     const [services, setServices] = useState([]);
     const mainServices = services.slice(0, 6);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://safe-citadel-17989.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setServices(data))
 

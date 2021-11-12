@@ -6,7 +6,7 @@ const ManageProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/manage/product`;
+        const url = `https://safe-citadel-17989.herokuapp.com/manage/product`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))
@@ -16,7 +16,7 @@ const ManageProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure , You want to delete ?');
         if (proceed) {
-            const url = `http://localhost:5000/manage/product/${id}`;
+            const url = `https://safe-citadel-17989.herokuapp.com/manage/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

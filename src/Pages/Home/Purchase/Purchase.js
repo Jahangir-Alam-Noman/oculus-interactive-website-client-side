@@ -15,7 +15,7 @@ const Purchase = () => {
     const [orderSuccess, setOrderSuccess] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${serviceId}`)
+        fetch(`https://safe-citadel-17989.herokuapp.com/products/${serviceId}`)
             .then(res => res.json())
             .then(data => setDetails(data))
     }, [])
@@ -24,7 +24,7 @@ const Purchase = () => {
     const onSubmit = data => {
         // console.log(data);
         data.status = "Pending";
-        axios.post(`http://localhost:5000/products/${serviceId}`, data)
+        axios.post(`https://safe-citadel-17989.herokuapp.com/products/${serviceId}`, data)
             .then(res => {
                 if (res.data.insertedId) {
                     setOrderSuccess(true);
@@ -44,8 +44,8 @@ const Purchase = () => {
             <div className="row pb-5 mb-5 px-5 container  ">
                 <div className="col-12 col-md-6 px-5 col-lg-6">
                     <img src={details?.img} className="img-fluid pt-3" alt="" />
-                    <h3 className="details_headline">{details?.name}</h3>
-                    <h5 className="text-warning fw-bolder">Price : $ {details?.price}</h5>
+                    <h3 className="details_headline pb-3">{details?.name}</h3>
+                    <h5 className="text-warning fw-bolder pb-2">Price : $ {details?.price}</h5>
                     <p className="text-start"> {details?.description}</p>
 
                 </div>
@@ -55,7 +55,7 @@ const Purchase = () => {
                             Ordered Successfully!
                         </Alert>}
 
-                        <h3 className="fw-bolder">Buy Product</h3>
+                        <h3 className="fw-bolder pb-4">Buy Product</h3>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input defaultValue={user?.displayName} {...register("name", { required: true, maxLength: 20 })}
                             />

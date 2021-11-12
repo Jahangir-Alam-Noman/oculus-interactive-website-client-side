@@ -16,7 +16,7 @@ const SingleExplore = ({ explore }) => {
                             <p> {description.slice(0, 140)}</p>
                         </Card.Text>
                         <Card.Title>
-                            <Link to={`/service/${_id}`}>  <button className="btn  btn-outline-info  px-3 py-2">Buy Now </button></Link>
+                            <Link to={`/service/${_id}`}>  <button className="btn  btn-outline-info  px-3 py-2 mt-3">Buy Now </button></Link>
                         </Card.Title>
                     </Card.Body>
                 </Card>

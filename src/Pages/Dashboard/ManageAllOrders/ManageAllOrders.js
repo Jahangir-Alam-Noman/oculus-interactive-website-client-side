@@ -7,7 +7,7 @@ const ManageAllOrders = () => {
     const [load, setLoad] = useState(false);
     const [orderedProducts, setOrderedProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/manage')
+        fetch('https://safe-citadel-17989.herokuapp.com/manage')
             .then(res => res.json())
             .then(data => setOrderedProducts(data))
     }, [load])
@@ -15,7 +15,7 @@ const ManageAllOrders = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure , You want to delete ?');
         if (proceed) {
-            const url = `http://localhost:5000/manage/${id}`;
+            const url = `https://safe-citadel-17989.herokuapp.com/manage/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -32,7 +32,7 @@ const ManageAllOrders = () => {
     }
 
     const handleStatus = id => {
-        axios.put(`http://localhost:5000/manage/status/${id}`, {})
+        axios.put(`https://safe-citadel-17989.herokuapp.com/manage/status/${id}`, {})
             .then(res => {
                 if (res.data.acknowledged) {
                     setLoad(true);
