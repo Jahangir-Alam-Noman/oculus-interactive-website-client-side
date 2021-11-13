@@ -42,6 +42,7 @@
 
 .serv-section-2-icon i {
     color: #51b2c2;
+    /* color: #d6550b; */
     font-size: 48px;
     line-height: 65px;
     transition: all 0.4s ease-in-out;
@@ -73,6 +74,7 @@
     width: 100px;
     height: 3px;
     background: #51b2c2;
+    /* background: #d10f0f; */
     border-radius: 25%;
     margin-top: 15px;
     margin-bottom: 5px;

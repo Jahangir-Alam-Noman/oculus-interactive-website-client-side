@@ -34,8 +34,8 @@ const ManageProducts = () => {
 
     return (
         <div>
-            <h1 className="pt-5 pb-4 mt-2  fw-bolder">Total Products : {products.length} </h1>
-            <table className="table table-success table-bordered table-striped table-hover">
+            <h1 className="pt-3 pb-4 mt-2 fw-bolder">Total Products : {products.length} </h1>
+            <table className="table   table-success table-bordered table-striped table-hover">
                 <thead>
                     <tr>
                         <th scope="col">SL</th>
