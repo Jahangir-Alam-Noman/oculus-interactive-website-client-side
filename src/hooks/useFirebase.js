@@ -118,6 +118,7 @@ const useFirebase = () => {
     const saveUser = (email, displayName, method) => {
 
         const user = { email, displayName };
+
         fetch('https://safe-citadel-17989.herokuapp.com/users', {
             method: method,
             headers: {

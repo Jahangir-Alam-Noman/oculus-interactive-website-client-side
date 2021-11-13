@@ -46,7 +46,7 @@ const ManageAllOrders = () => {
             <div className="container">
                 <div className="row">
                     <h1 className="fw-bolder pt-5">Manage All Orders</h1>
-                    <table className="table table-bordered  table-striped  table-hover ">
+                    <table className="table  table-bordered  table-striped  table-hover ">
                         <thead>
                             <tr>
                                 <th scope="col">SL</th>
