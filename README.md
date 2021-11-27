@@ -16,8 +16,9 @@ In the project directory, you can run:
 
 ==>	After completing your ordered you are able to log out from your account
 
-
-Short description :
-
-Sunglasses or sun glasses are a form of protective eyewear designed primarily to prevent bright sunlight and high-energy visible light from damaging or discomforting the eyes. They offer greater visual coverage, preventing UV rays from easily penetrating your eyes. Most of the time, individuals choose darker lens tints, thinking it provides better UV blockage.
-
+●	Overview
+▪	Firebase authentication used for client / admin signup and login.
+▪	Both admin & user roles were added for the dashboard.
+▪	Admin can  add/remove  products,manage products and view & update orders of all users. Only admin makes an admin from a normal user.
+▪	User can check his/her orders or cancel and also give reviews on products.
+●	Technologies used : React.js,Firebase,React Router, Node.js,Express js and MongoDB.
