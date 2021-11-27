@@ -16,9 +16,9 @@ In the project directory, you can run:
 
     ▪	Only admin makes an admin from a normal user.
  
-    ▪   User can check his/her orders or cancel and also give reviews on products.
+    ▪    User can check his/her orders or cancel and also give reviews on products.
 
-    ▪   If user registered / logged, by this website he/she will be able to buy any sunglasses
+    ▪    If user registered / logged, by this website he/she will be able to buy any sunglasses
 
     ▪	Here is a option to enter user's valuable comments and rating
 
