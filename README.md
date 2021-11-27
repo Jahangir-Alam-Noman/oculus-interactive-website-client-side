@@ -22,6 +22,6 @@ In the project directory, you can run:
 
     ▪   Here is a option to enter user's valuable comments and rating
 
-    ▪   After completing user ordered he/she is able to log out from your account
+    ▪   After completing user ordered he/she is able to log out from account
 
 ●	Technologies used : React.js,Firebase,React Router, Node.js,Express js and MongoDB.
