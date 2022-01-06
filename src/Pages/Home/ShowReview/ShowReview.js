@@ -12,11 +12,6 @@ const ShowReview = () => {
             .then(data => setReviews(data))
 
     }, [])
-
-
-
-
-
     return (
         <div>
             <div className="section-block-grey">
@@ -24,7 +19,6 @@ const ShowReview = () => {
                     <div className="section-heading center-holder">
                         <h3 className="pb-4">Latest Reviews on Sunglasses</h3>
                         <div className="section-heading-line"></div>
-
                     </div>
                     <div className="row mt-60">
                         {
@@ -33,8 +27,6 @@ const ShowReview = () => {
                                 review={review}
                             ></ShowSingleReview>)
                         }
-
-
                     </div>
 
                 </div>
